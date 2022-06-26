@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"pool-1-thread-1","id":1},{"content":"pool-1-thread-2","id":2},{"content":"pool-1-thread-3","id":3},{"content":"pool-1-thread-4","id":4}];
+var items = [{"id":1,"group":1,"content":"users\/get\/users-get-list_users[1:10]","start":1655124640224,"end":1655124640848,"title":"users\/get\/users-get-list_users[1:10] 14:50:40.224-14:50:40.848 Get a list of user schema validation"},{"id":2,"group":2,"content":"users\/get\/users-get-list_users[2:17]","start":1655124640224,"end":1655124640842,"title":"users\/get\/users-get-list_users[2:17] 14:50:40.224-14:50:40.842 Get a list of user"},{"id":3,"group":3,"content":"users\/get\/users-get-list_users[3:24]","start":1655124640224,"end":1655124644884,"title":"users\/get\/users-get-list_users[3:24] 14:50:40.224-14:50:44.884 Get a list of user extract by id"},{"id":4,"group":4,"content":"users\/get\/users-get-list_users[4:38]","start":1655124640224,"end":1655124644063,"title":"users\/get\/users-get-list_users[4:38] 14:50:40.224-14:50:44.063 Get a list of user interact with 2 endpoints"},{"id":5,"group":4,"content":"users\/post\/users-post-register[1:8]","start":1655124644066,"end":1655124644276,"title":"users\/post\/users-post-register[1:8] 14:50:44.066-14:50:44.276 Post register unsuccessful missing password"},{"id":6,"group":1,"content":"users\/post\/users-post-register[2:15]","start":1655124644181,"end":1655124644307,"title":"users\/post\/users-post-register[2:15] 14:50:44.181-14:50:44.307 Post a user unsuccessful missing email"},{"id":7,"group":4,"content":"users\/post\/users-post[1:8]","start":1655124644279,"end":1655124644402,"title":"users\/post\/users-post[1:8] 14:50:44.279-14:50:44.402 Post a user schema validation"},{"id":8,"group":1,"content":"users\/post\/users-post[2.1:36]","start":1655124644310,"end":1655124644432,"title":"users\/post\/users-post[2.1:36] 14:50:44.310-14:50:44.432 Post a user"},{"id":9,"group":4,"content":"users\/post\/users-post[3:39]","start":1655124644405,"end":1655124644573,"title":"users\/post\/users-post[3:39] 14:50:44.405-14:50:44.573 Post a user without job"},{"id":10,"group":1,"content":"users\/post\/users-post[4:47]","start":1655124644434,"end":1655124644579,"title":"users\/post\/users-post[4:47] 14:50:44.434-14:50:44.579 Post a user without name"},{"id":11,"group":4,"content":"users\/post\/users-post[5:55]","start":1655124644578,"end":1655124644704,"title":"users\/post\/users-post[5:55] 14:50:44.578-14:50:44.704 Post a user with empty request"},{"id":12,"group":2,"content":"users\/get\/users-get-single_user[1:7]","start":1655124640848,"end":1655124645041,"title":"users\/get\/users-get-single_user[1:7] 14:50:40.848-14:50:45.041 Get a user schema validation"},{"id":13,"group":1,"content":"users\/get\/users-get-single_user[2.1:28]","start":1655124640854,"end":1655124644033,"title":"users\/get\/users-get-single_user[2.1:28] 14:50:40.854-14:50:44.033 Get a user"},{"id":14,"group":1,"content":"users\/get\/users-get-single_user[3:31]","start":1655124644037,"end":1655124644178,"title":"users\/get\/users-get-single_user[3:31] 14:50:44.037-14:50:44.178 Get a single user not found"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
